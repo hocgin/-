@@ -18,10 +18,9 @@ class LikeButton extends React.Component {
     static defaultProps = {
         note: 'props 初始化方式'
     };
-    propTypes = {
-        note: PropTypes.
+    static propTypes = {
+        note: PropTypes.string
     };
-
     /**
      * 1. 构造
      * - super(props) 是必须的

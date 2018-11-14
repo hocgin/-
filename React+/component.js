@@ -68,7 +68,8 @@ class LikeButton extends React.Component {
         if (this.state.liked) {
             content = (
                 <div>
-                    You liked this.
+                    <div onClick={this.showAlert}>You liked this.</div>
+                    <div onClick={this.showAlert2.bind(this, '1')}>You liked this.</div>
                 </div>
             );
             // return React.createElement('div', null, 'You liked this.');
@@ -142,13 +143,24 @@ class LikeButton extends React.Component {
 
     /**
      * ==========================================================
-     *                           调用型
+     *                           React 组件 API
      * ==========================================================
      */
     exampleSetState() {
+        // 设置状态 setState(object nextState[, function callback])
         this.setState({
             liked: true
         });
+
+        // 替换属性 replaceState(object nextState[, function callback])
+        // 设置属性 setProps(object nextProps[, function callback])
+        // 替换属性 replaceProps(object nextProps[, function callback])
+        this.replaceProps({
+            note: 'replace ~'
+        });
+        // 强制更新 forceUpdate([function callback])
+        // 获取DOM节点 DOMElement findDOMNode()
+        // 判断组件挂载状态 bool isMounted()
     }
     /**
      * ==========================================================
@@ -161,5 +173,23 @@ class LikeButton extends React.Component {
             count: this.state.count += 1
         });
     }
+
+    showAlert() {
+        alert('Hi');
+    }
+
+    /**
+     *
+     * @param val
+     * @param e 会在最后
+     */
+    showAlert2(val, e) {
+        console.log(e, val);
+    }
 }
+
+/**
+ * 组件的事件
+ * https://www.cnblogs.com/mabylove/p/6873506.html
+ */
 

@@ -2,7 +2,9 @@ class JSX extends React.Component {
 
     render() {
         /**
-         * key: React利用key来识别组件，它是一种身份标识标识
+         * key:
+         * - React利用key来识别组件，它是一种身份标识标识
+         * - key 在他的兄弟元素之间应该唯一
          * @type {*[]}
          */
         let spans = [
@@ -20,6 +22,7 @@ class JSX extends React.Component {
             <div>{1 + 1}</div>
             <div style={style}>{new Date().toDateString()}</div>
             <div>{Math.random() > 0.5 ? 'true' : 'false'}</div>
+            <div>{ Math.random() > 0.5 && <h1>2233 {9-1}</h1>}</div>
         </div>);
     }
 }

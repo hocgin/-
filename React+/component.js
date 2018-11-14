@@ -188,8 +188,3 @@ class LikeButton extends React.Component {
     }
 }
 
-/**
- * 组件的事件
- * https://www.cnblogs.com/mabylove/p/6873506.html
- */
-

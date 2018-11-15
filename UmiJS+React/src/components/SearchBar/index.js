@@ -4,10 +4,15 @@ import styles from './index.less';
 
 export default class SearchBar extends Component {
     state = {
-        keywords: '11',
+        keywords: '',
+        tabNames: ['Google', 'Baidu', 'Yahoo', '搜狗'],
         classify: {
             clicked: '全部',
             list: ['全部', '音乐', '图片', '视频']
+        },
+        tab: {
+          clicked: 0,
+          list: ['Google', 'Baidu', 'Yahoo', '搜狗']
         }
     };
 
@@ -16,7 +21,8 @@ export default class SearchBar extends Component {
     }
 
 
-    renderTabs(tabs, clicked = 0) {
+    renderTabs(tabs = this.state.tab.list,
+               clicked = this.state.tab.clicked) {
         return tabs.map((tab, i) => {
             return (
                 <div key={i} className={classNames(
@@ -57,17 +63,11 @@ export default class SearchBar extends Component {
         return (
             <div className={styles.search_bar}>
                 <div className={styles.links}>
-                    {this.renderTabs(['Google', 'Baidu', 'Yahoo'], 1)}
+                    {this.renderTabs()}
                 </div>
                 <div className={styles.text}>
                     <div className={styles.dropdown}>
                         {this.renderClassifies()}
-                        {/*<button className={styles.drop_btn}>全部</button>*/}
-                        {/*<div className={styles.dropdown_content}>*/}
-                        {/*<a href="#">音乐</a>*/}
-                        {/*<a href="#">图片</a>*/}
-                        {/*<a href="#">视频</a>*/}
-                        {/*</div>*/}
                     </div>
                     <input type="text" placeholder="请输入内容"
                            style={{fontSize: "1.03em"}}

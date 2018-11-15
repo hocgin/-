@@ -2,6 +2,15 @@
 html, body, #root {
   height: 100%;
 }
+#root {
+  font-family: Georgia, sans-serif;
+  text-align: center;
+  background-image: url('https://open.saintic.com/api/bingPic/');
+  background-repeat: no-repeat;
+  background-position: left;
+  /*-webkit-filter: blur(1px);*/
+  /*filter: blur(1px);*/
+}
 
 body {
   margin: 0;

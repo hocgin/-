@@ -5,6 +5,6 @@ export default class Demo extends Component {
 
 
     render() {
-        return (<div></div>);
+        return (<div>Demo</div>);
     }
 };

@@ -1,0 +1,39 @@
+
+.normal {
+  font-family: Georgia, sans-serif;
+  text-align: center;
+}
+.header {
+  height: 412px;
+  box-shadow: 0 0 1px rgba(0,0,0,.15);
+  padding: 30px;
+  //background-color: #fff;
+
+  background-image: url('https://open.saintic.com/api/bingPic/');
+  background-repeat: no-repeat;
+  background-position: left;
+  //-webkit-filter: blur(1px);
+  //filter: blur(1px);
+}
+.body {
+  height: 500px;
+  .site {
+    padding: 30px 10px 10px 30px;
+    overflow: auto;
+    .content_container {
+      margin: 0 103px;
+      .title {
+        text-align: left;
+        margin: 20px 0;
+        h3 {
+          margin: 0;
+        }
+      }
+      .item {
+        width: calc(20% - 20px);
+        margin: 0 20px 20px 0;
+        display: inline-block;
+      }
+    }
+  }
+}

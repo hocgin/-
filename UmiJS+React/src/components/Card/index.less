@@ -1,0 +1,41 @@
+.card {
+  background-color: #fff;
+  animation: fadein 1s;
+  box-shadow: 5px 5px 15px 0 #e9ecef;
+  border-radius: 20px;
+  cursor: pointer;
+  .header {
+    height: 30px;
+  }
+  .body {
+    height: 200px;
+    overflow: hidden;
+    .image {
+      width: 100%;
+      height: 100%;
+      transition: all .3s;
+      background-size: cover;
+      background-position: 50%;
+      image-rendering: crisp-edges;
+      background-image: url('https://klart.io/api/pixels/5bebbe72a9517e2d7fc554ff/thumb.png');
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .footer {
+    padding: 0 15px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    a.tag {
+      text-decoration: none;
+      color: #9B9B9B;
+      &:before {
+        content: '#';
+        margin-right: 1px;
+      }
+    }
+  }
+}

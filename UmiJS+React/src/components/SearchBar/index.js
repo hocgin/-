@@ -144,12 +144,14 @@ export default class SearchBar extends Component {
                     <div className={styles.dropdown}>
                         {this.renderClassifies()}
                     </div>
-                    <input type="text" placeholder="请输入内容"
+                    <input type="text"
+                           placeholder="请输入内容"
                            style={{fontSize: "1.03em"}}
                            value={this.state.keywords}
                            onChange={(v) => {
                                this.setState({keywords: v.target.value});
                            }}
+                           autoFocus
                     />
                     <button className={styles.search_btn} onClick={this.handleSearch.bind(this)}>
                             <span className={styles.icon}>

@@ -21,6 +21,14 @@
       animation-iteration-count: infinite;
     }
   }
+
+  .opacity {
+    :local {
+      animation-name: opacity;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  }
 }
 
 @keyframes heartbeat {
@@ -49,3 +57,13 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+@keyframes opacity {
+  0%, 100% {
+    opacity: .3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+

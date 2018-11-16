@@ -114,7 +114,7 @@ export default class SearchBar extends Component {
         let {options, selected} = tab.options[tab.selected].classify;
         let content = (
             <button key='0' className={classNames(styles.drop_btn)}>
-                <div className={classNames('heartbeat')}>{options[selected].name}</div>
+                <div className={classNames({'opacity': true})}>{options[selected].name}</div>
             </button>
         );
 

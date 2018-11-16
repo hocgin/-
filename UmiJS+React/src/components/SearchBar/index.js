@@ -113,8 +113,8 @@ export default class SearchBar extends Component {
         let tab = this.state.tab;
         let {options, selected} = tab.options[tab.selected].classify;
         let content = (
-            <button key='0' className={styles.drop_btn}>
-                {options[selected].name}
+            <button key='0' className={classNames(styles.drop_btn)}>
+                <div className={classNames('heartbeat')}>{options[selected].name}</div>
             </button>
         );
 

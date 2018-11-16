@@ -9,7 +9,7 @@ export default class Card extends Component {
           <div className={styles.card}>
             <div className={styles.header}></div>
             <div className={styles.body}>
-              <div className={styles.image} style={{backgroundImage: "url('https://klart.io/api/pixels/5bebbe72a9517e2d7fc554ff/thumb.png')"}}></div>
+              <div className={styles.image}></div>
             </div>
             <div className={styles.footer}>
               <a className={styles.tag} href="#标签">标签</a>

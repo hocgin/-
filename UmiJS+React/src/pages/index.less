@@ -1,17 +1,22 @@
-
+@import "~@/mixin.less";
 .normal {
   font-family: Georgia, sans-serif;
   text-align: center;
+}
+.toolbar {
+  position: absolute;
+  height: 43px;
+  width: 100%;
 }
 .header {
   height: 412px;
   box-shadow: 0 0 1px rgba(0,0,0,.15);
   padding: 30px;
   background-color: #fff;
-  background-image: url('https://open.saintic.com/api/bingPic/');
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: cover;
+  .background();
+  .search_bar {
+    margin-top: 50px;
+  }
 }
 .body {
   height: 500px;

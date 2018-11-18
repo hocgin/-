@@ -136,7 +136,7 @@ export default class SearchBar extends Component {
 
     render() {
         return (
-            <div className={styles.search_bar}>
+            <div className={classNames(styles.search_bar, this.props.className)}>
                 <div className={styles.links}>
                     {this.renderTabs()}
                 </div>

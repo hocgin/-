@@ -3,15 +3,14 @@ import SearchBar from '../components/SearchBar';
 import Toolbar from '../components/Toolbar';
 import Card from '../components/Card';
 import HotKey from '../components/HotKey';
+import Todo from '../components/Todo';
 import React from "react";
 import {Icon, Row, Col} from 'antd';
 
 export default function () {
     return (
         <div className={styles.normal}>
-            <div className={styles.toolbar}>
-                <Toolbar/>
-            </div>
+            <Toolbar className={styles.toolbar}/>
             <div className={styles.header}>
                 <SearchBar className={styles.search_bar}/>
                 <HotKey className={styles.hot_key}/>

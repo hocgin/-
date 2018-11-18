@@ -3,7 +3,6 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 100%;
   .bg {
     filter: blur(4px);
     position: absolute;
@@ -23,34 +22,47 @@
     background-color: hsla(0, 0%, 100%, .4);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
   }
-  .workspace {
+  .content {
     z-index: 100;
     height: 100%;
-    ul {
-      padding: 0;
-      margin: 0 0 0 70px;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      li {
-        list-style: none;
+    width: 100%;
+    margin-left: 74px;
+    margin-right: 74px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .workspace {
+      ul {
+        padding: 0;
+        height: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 100%;
-        background-color: hsla(0, 0%, 100%, 0);
-        a {
-          text-decoration: none;
-          color: #fff;
-          display: inline-block;
-          margin: 0 18px;
-          opacity: .8;
-        }
-        &:hover, &.active {
-          background-color: hsla(0, 0%, 100%, .3);
+        li {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          height: 100%;
+          background-color: hsla(0, 0%, 100%, 0);
+          a {
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            margin: 0 18px;
+            opacity: .8;
+          }
+          &:hover, &.active {
+            background-color: hsla(0, 0%, 100%, .3);
+          }
         }
       }
+    }
+    .todo {
+      color: #fff;
+      align-self: center;
+      font-weight: 600;
+      cursor: pointer;
     }
   }
 

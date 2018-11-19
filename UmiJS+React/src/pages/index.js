@@ -6,7 +6,6 @@ import HotKey from '../components/HotKey';
 import Todo from '../components/Todo';
 import React from "react";
 import {Icon, Row, Col} from 'antd';
-import ReactFullpage from '@fullpage/react-fullpage';
 
 
 function section1() {

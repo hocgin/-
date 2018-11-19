@@ -30,6 +30,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.2",
     "antd": "^3.10.8",
     "classnames": "^2.2.6"
   }

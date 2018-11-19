@@ -6,8 +6,10 @@ import HotKey from '../components/HotKey';
 import Todo from '../components/Todo';
 import React from "react";
 import {Icon, Row, Col} from 'antd';
+import ReactFullpage from '@fullpage/react-fullpage';
 
-export default function () {
+
+function section1() {
     return (
         <div className={styles.normal}>
             <Toolbar className={styles.toolbar}/>
@@ -47,4 +49,43 @@ export default function () {
             </div>
         </div>
     );
+}
+
+export default function () {
+    // return (
+    //     // OPEN-SOURCE-GPLV3-LICENSE
+    //     <ReactFullpage
+    //
+    //         render={({state, fullpageApi}) => {
+    //             return (
+    //                 <ReactFullpage.Wrapper>
+    //                     <div className="section">
+    //                         <p>Section 2</p>
+    //                     </div>
+    //                     <div className="section">
+    //                         {section1()}
+    //                     </div>
+    //                 </ReactFullpage.Wrapper>
+    //             );
+    //         }}
+    //     />
+    // );
+    return (
+        <div style={{
+            transform: 'translate3d(0px, -100vh, 0px)',
+            transition: 'all 700ms ease 0s',
+            position: 'absolute',
+            width: '100%',
+            touchAction: 'none'
+        }}>
+            <div style={{
+                height: '100vh',
+                backgroundColor: 'gray'
+            }}>1
+            </div>
+            <div>
+                {section1()}
+            </div>
+        </div>
+    )
 }

@@ -3,9 +3,9 @@ html, body, #root {
   background: #fafafa;
     /*position: absolute;*/
 }
-body::-webkit-scrollbar {
-    display: none;
-}
+/*body::-webkit-scrollbar {*/
+    /*display: none;*/
+/*}*/
 
 #root {
   font-family: Georgia, sans-serif;

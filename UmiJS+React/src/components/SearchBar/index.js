@@ -151,7 +151,7 @@ export default class SearchBar extends Component {
                            onChange={(v) => {
                                this.setState({keywords: v.target.value});
                            }}
-                           onKeyDown={this._onKeyDown.bind(this)}
+                           onKeyDown={this._onKeyDownSearch.bind(this)}
                            autoFocus
                     />
                     <button className={styles.search_btn} onClick={this.handleSearch.bind(this)}>
@@ -197,7 +197,7 @@ export default class SearchBar extends Component {
         window.location.href = `${options[selected].link}${q}`;
     }
 
-    _onKeyDown(e) {
+    _onKeyDownSearch(e) {
         // 回车
         if (e.keyCode === 13) {
             this.handleSearch();

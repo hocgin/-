@@ -12,7 +12,7 @@ export default class Card extends Component {
               <div className={styles.image}></div>
             </div>
             <div className={styles.footer}>
-              <a className={styles.tag} href="#标签">标签</a>
+              <a className={styles.tag} href="#标签">{this.props.tag}</a>
             </div>
           </div>
         );

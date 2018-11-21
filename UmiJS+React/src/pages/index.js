@@ -3,6 +3,7 @@ import SearchBar from '../components/SearchBar';
 import Toolbar from '../components/Toolbar';
 import Card from '../components/Card';
 import HotKey from '../components/HotKey';
+import classNames from 'classnames';
 import React, {Component} from "react";
 import {Col, Icon, Row} from 'antd';
 
@@ -10,7 +11,35 @@ import {Col, Icon, Row} from 'antd';
 export default class Page extends Component {
 
     state = {
-        egg: false
+        egg: false,
+        site: [{
+            name: '推荐',
+            link: [{
+                title: '百度1',
+                url: 'http://www.baidu.com'
+            }, {
+                title: '百度2',
+                url: 'http://www.baidu.com'
+            }, {
+                title: '百度3',
+                url: 'http://www.baidu.com'
+            }, {
+                title: '百度4',
+                url: 'http://www.baidu.com'
+            }, {
+                title: '百度5',
+                url: 'http://www.baidu.com'
+            }, {
+                title: '百度6',
+                url: 'http://www.baidu.com'
+            }]
+        }, {
+            name: '推荐2',
+            link: [{
+                title: '百度2',
+                url: 'http://www.baidu.com'
+            }]
+        }]
     };
 
 
@@ -23,7 +52,7 @@ export default class Page extends Component {
     }
 
     _onScroll(e) {
-        return;
+        return; // TODO 暂时禁用
         if (window.scrollY <= 0) {
             this.setState({egg: true});
         } else if (window.scrollY > 0 && this.state.egg) {
@@ -31,6 +60,47 @@ export default class Page extends Component {
                 window.scrollTo(0, 0);
             });
         }
+    }
+
+    _onDrop(i, i2, e) {
+        e.preventDefault();
+        const {site} = this.state;
+        const ei = e.dataTransfer.getData('i');
+        const ei2 = e.dataTransfer.getData('i2');
+        let link = site[i].link;
+        link = link.splice(i2, 1, ...link.splice(ei2, 1, link[i2]));
+
+        console.log('link', link);
+        this.setState({
+            [site[i]]: Object.assign([site[i]], {link: link})
+        });
+        console.log('_onDrop-->', arguments)
+    }
+
+    _onDragStart(i, i2, e) {
+        console.log(e.dataTransfer);
+        e.dataTransfer.setData('i', i);
+        e.dataTransfer.setData('i2', i2);
+        console.log('-->', i)
+    }
+
+    _onDragLeave(e) {
+        // if (e.target.className.indexOf('dropping') !== -1) {
+        //     e.target.className = styles.dropped;
+        // }
+    }
+
+    _onDragOver(e) {
+        e.preventDefault();
+        // console.log('onDragOver-->', arguments)
+    }
+
+    _onDragEnter(e) {
+        // if (e.target.className.indexOf('dropped') !== -1) {
+        //     console.log('dropped', e);
+        //     e.target.className = styles.dropping;
+        // }
+        // console.log('onDragEnter-->', arguments)
     }
 
     egg() {
@@ -64,6 +134,41 @@ export default class Page extends Component {
         // this.setState({h: '0vh'});
     }
 
+    /**
+     * 渲染频道
+     * @returns {any[]}
+     * @private
+     */
+    _renderSite() {
+        const {site} = this.state;
+        console.log(site);
+        return site.map((v, i) => {
+            return (
+                <div className={styles.content_container}>
+                    <div className={styles.title}>
+                        <h3>{v.name}</h3>
+                    </div>
+                    <Row>
+                        {v.link.map((v2, i2) => {
+                            return (
+                                <Col xl={4} className={classNames(styles.item)}
+                                     draggable={true}
+                                     onDragStart={this._onDragStart.bind(this, i, i2)}
+                                     onDrop={this._onDrop.bind(this, i, i2)}
+                                     onDragLeave={this._onDragLeave.bind(this)}
+                                     onDragOver={this._onDragOver.bind(this)}
+                                     onDragEnter={this._onDragEnter.bind(this)}
+                                >
+                                    <Card tag={v2.title}/>
+                                </Col>
+                            )
+                        })}
+                    </Row>
+                </div>
+            )
+        });
+    }
+
     renderSection1() {
         return (
             <div className={styles.normal}>
@@ -74,22 +179,9 @@ export default class Page extends Component {
                 </div>
                 <div className={styles.body}>
                     <div className={styles.site}>
-                        <div className={styles.content_container}>
-                            <div className={styles.title}>
-                                <h3>推荐</h3>
-                            </div>
-                            <Row>
-                                {
-                                    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(() => {
-                                        return (
-                                            <Col xl={4} className={styles.item}>
-                                                <Card/>
-                                            </Col>
-                                        );
-                                    })
-                                }
-                            </Row>
-                        </div>
+                        {
+                            this._renderSite()
+                        }
                     </div>
                 </div>
                 <div className={styles.footer}>

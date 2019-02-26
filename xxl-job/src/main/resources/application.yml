@@ -1,0 +1,13 @@
+xxl:
+  job:
+    admin:
+      addresses: http://34.80.23.168:8020/xxl-job-admin
+    executor:
+      appname: mktcenter
+      ip:
+      port: 9999
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: -1
+    accessToken:
+server:
+  port: 8030

@@ -10,4 +10,4 @@ xxl:
       logretentiondays: -1
     accessToken:
 server:
-  port: 8030
+  port: 8020
